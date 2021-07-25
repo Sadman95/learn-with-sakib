@@ -3,8 +3,14 @@
 
 :root{
     --primary-font: 'Lato';
-    --secondary-font: 'Open Sans';
-    --primary-background: #282612;
+    --secondary-font: 'Helvetica';
+    --body-background: #282612;
+    --nav-background: #f1f1f1;
+    --button-text-color: #000;
+    --button-hover-color: lavenderblush;
+    --span-text-color: orange;
+    --paragraph-color: dimgrey;
+    --button-hover-line-color: rgb(88, 88, 88);
 }
 *{
     padding: 0;
@@ -17,7 +23,7 @@ html{
 body{
     overflow-x: hidden;
     font-family: var(--primary-font);
-    background-color: var(--primary-background);
+    background-color: var(--body-background);
 }
 ul,ol{
     list-style: none;
@@ -28,11 +34,161 @@ a{
 img{
     vertical-align: middle;
 }
+
+/* predefined css */
 .container{
     width: 80%;
     margin: auto;
 }
+.center-text{
+    text-align: center;
+}
 
 
+/* header css */
+nav{
+    background-color: var(--nav-background);
+    padding: 0.8rem 0 0.5rem 0;
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.change-span{
+    color: var(--span-text-color);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+.name::after{
+    position: absolute;
+    content: " ";
+    height: 8px;
+    width: 8px;
+    border: 1px solid #8000004d;
+    border-radius: 50%;
+    left: 51.5%;
+    top: 14.5%;
+}
+.flex-display{
+    display: flex;
+    align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.menu-item{
+    margin-left: 1rem;
+    position: relative;
+    padding: 0.3rem 0;
+}
+.menu-link{
+    font-family: var(--secondary-font);
+    color: var(--button-text-color);
+}
+.menu-item::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: var(--button-hover-line-color);
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 300ms ease-in;
+}
+.menu-item:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
+/* home css */
+#home,#about{
+    background-color: #fff;
+    padding-top: 48px;
+}
+.banner{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.banner h1{
+    padding-bottom: 32px;
+}
+p{
+    padding-bottom: 16px;
+    color: var(--paragraph-color);
+}
 
+.enroll-btn{
+    display: table;
+    margin-top: 32px;
+    color: var(--button-text-color);
+    border: 1px solid orangered;
+    padding: 6px 18px;
+    transition: all 0.3s ease-in;
+}
+.enroll-btn:hover{
+    background: linear-gradient(120deg, rgba(252,10,10,1) 0%, orange 100%);
+    border: 1px solid transparent;
+    color: var(--button-hover-color);
+}
+
+/* about css */
+#about{
+    width: 90%;
+    margin: 62px auto;
+    border-radius: 12px;
+}
+.about-me{
+    display: flex;
+}
+.about-text{
+    padding: 5% 0 5% 18%;
+    
+}
+.about-text h2{
+    line-height: 2em;
+}
+.about-text p{
+    line-height: 2rem;
+}
+
+/* learning css */
+#learn{
+    margin: 64px 0;
+}
+.learnings{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 32px;
+}
+.color-lavender{
+    color: lavender;
+}
+.card img{
+    height: 220px;
+    transition: transform 0.3s linear;
+}
+#learn h1{
+    padding-bottom: 32px;
+}
+.card h2{
+    padding: 16px 0;
+}
+.card p{
+    text-align: justify;
+    transition: all 0.3s ease-in;
+    padding: 5px 20px 5px 5px;
+    transform: scaleY(0);
+}
+.card:hover img{
+    transform: translateY(-12px);
+}
+.card:hover p{
+    background-color: #fff;
+    border-radius: 5px;
+    transform: scaleY(1);
+    transform-origin: top;
+}
