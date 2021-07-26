@@ -49,11 +49,21 @@ img{
 nav{
     background-color: var(--nav-background);
     padding: 0.8rem 0 0.5rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0px 0px 16px 0px lightslategrey;
 }
+
 .nav-bar{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.hamburger-menu{
+    display: none;
 }
 .change-span{
     color: var(--span-text-color);
@@ -109,7 +119,7 @@ nav{
     background-color: #fff;
     padding-top: 48px;
 }
-.banner{
+.banner,.contact-me{
     display: grid;
     grid-template-columns: repeat(2,1fr);
 }
@@ -155,7 +165,9 @@ p{
 .about-text p{
     line-height: 2rem;
 }
-
+.profile-pic{
+    box-shadow: 0 0 3px;
+}
 /* learning css */
 #learn{
     margin: 64px 0;
@@ -228,4 +240,108 @@ p{
 }
 .work-col:hover .work-cover{
     transform: scale(1);
+}
+
+/* contact css */
+#contact{
+    margin: 52px 0;
+}
+.contact-me{
+    background-color: slateblue;
+    padding: 32px;
+    border-radius: 12px;
+}
+#form input{
+    display: inline-block;
+    border: 1px solid grey;
+    padding: 6px 0px 6px 8px;
+    border-radius: 5px;
+}
+#form textarea{
+    resize: none;
+    width: 66.5%;
+    border-radius: 5px;
+    margin: 16px 0;
+    padding: 6px 0px 6px 8px;
+}
+#send-btn{
+    display: table;
+    margin: 12px 0;
+    padding: 6px 12px;
+    border-radius: 8px;
+
+}
+.social{
+    margin-top: 32px;
+}
+.social-item{
+    margin-right: 16px;
+    height: 36px;
+    width: 36px;
+    background-color: honeydew;
+    border-radius: 50%;
+    transition: transform 0.3s ease-out;
+}
+.fab{
+    font-size: 22px;
+}
+.social-item:hover{
+    transform: translateY(-12px);
+}
+.social-item:hover .fab{
+    color: black;
+}
+
+/* footer css */
+footer{
+    margin-top: 100px;
+}
+footer h2{
+    padding-bottom: 16px;
+}
+
+
+/* go to top */
+.go-top{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+}
+
+
+
+
+/* responsive */
+@media screen and (max-width: 688px) {
+    .menu{
+        display: none;
+    }
+    .nav-bar{
+        align-items: unset;
+    }
+    .hamburger-menu{
+        display: block;
+    }
+    .menu-item{
+        margin: 0;
+    }
+    .toggle-menu{
+        white-space: nowrap;
+        display: none;
+    }
+    #check{
+        display: none;
+    }
+    #check:checked~.toggle-menu{
+        display: block;
+    }
+    .logo h1{
+        -webkit-text-stroke: medium;
+        font-size: 22px;
+    }
+    .fa-bars{
+        font-size: 20px;
+        padding-top: 10px;
+    }
 }
