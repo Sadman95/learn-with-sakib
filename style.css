@@ -127,6 +127,7 @@ p{
     color: var(--button-text-color);
     border: 1px solid orangered;
     padding: 6px 18px;
+    font-weight: bold;
     transition: all 0.3s ease-in;
 }
 .enroll-btn:hover{
@@ -159,7 +160,7 @@ p{
 #learn{
     margin: 64px 0;
 }
-.learnings{
+.learnings,.my-work{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 32px;
@@ -191,4 +192,40 @@ p{
     border-radius: 5px;
     transform: scaleY(1);
     transform-origin: top;
+}
+
+/* work css */
+.my-work{
+    padding: 48px 0;
+}
+.work-col{
+    position: relative;
+}
+
+.work-cover{
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    right: 16px;
+    bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.589);
+    transform: scale(0);
+    transition: transform 0.3s ease-in;
+    box-shadow: 0 0 12px 0 lightseagreen;
+    border-radius: 8px;
+}
+.cover-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.cover-txt h3{
+    border: 2px solid orangered;
+    border-radius: 12px;
+    padding: 5px;
+    font-size: 11px;
+}
+.work-col:hover .work-cover{
+    transform: scale(1);
 }
